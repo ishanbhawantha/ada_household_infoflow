@@ -101,8 +101,7 @@ object InfoFlowMain {
   /***************************************************************************
    * read in graph
    ***************************************************************************/
-    def readGraph( sc: SparkContext, graphFile: String,
-    logFile: LogFile ): Graph = {
+    def readGraph( sc: SparkContext, graphFile: String, logFile: LogFile ): Graph = {
       logFile.write(s"Reading $graphFile\n",false)
       val graph = GraphReader( sc, graphFile, logFile )
       val vertices = graph.vertices.count
